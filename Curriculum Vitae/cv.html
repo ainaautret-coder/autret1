@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>- Dev Lo - Étudiant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cv-container">
+        <!-- En-tête -->
+        <header class="header">
+            <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+            <div class="photo">
+                <img src="/sary.png" alt="Photo de profil">
+            </div>
+            <div class="info">
+                <h1>Loïc Autret HOLAZANIRAINY</h1>
+                <h2>Étudiant en Développement d'Application Internet et Intranet</h2>
+                <p><span class="emoji">📧</span> ainaautret@gmail.com</p>
+                <p><span class="emoji">📞</span> 034 44 345 02</p>
+                <p><span class="emoji">📍</span> Fianarantsoa, Madagascar</p>
+                <p><span class="emoji">🐙</span> github.com/ainaautret-coder</p>
+            </div>
+        </header>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <!-- Colonne gauche -->
+            <section class="left-column">
+                <div class="section fade-in">
+                    <h3>Profil</h3>
+                    <p>Étudiant motivé en développement d'applications internet, passionné par la création de sites web
+                        modernes. </p>
+                </div>
+
+                <div class="section fade-in">
+                    <h3>Formation</h3>
+                    <ul>
+                        <li><strong>2025 - Aujourd'hui</strong> - Développement d'Application Internet et Intranet -
+                            Ecole de Management et d'Innovation Technologique</li>
+                        <li><strong>2022 - 2025</strong> - Baccalauréat - Lycée Sainte Chantal</li>
+                        <li><strong>2018 - 2022</strong> - Brevet d'Etudes du Premier Cycle - Lycée Sainte Chantal</li>
+                        <li><strong>2010 - 2018</strong> - Certificat d'Etudes Primaires Elémentaires - Lycée La Pépite d'Or II</li>
+                    </ul>
+
+                </div>
+
+                <div class="section fade-in">
+                    <h3>Langues</h3>
+                    <ul>
+                        <li><strong>Malagasy :</strong> Langue maternelle</li>
+                        <li><strong>Français :</strong> Niveau B2</li>
+                        <li><strong>Anglais :</strong> Niveau B2</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Colonne droite -->
+            <section class="right-column">
+                <div class="section fade-in">
+                    <h3>Compétences</h3>
+                    <div class="skills-category">
+                        <h4>Langages</h4>
+                        <div class="skill">
+                            <span>HTML / CSS</span>
+                            <div class="progress-bar">
+                                <div class="progress w80"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>JavaScript</span>
+                            <div class="progress-bar">
+                                <div class="progress w20"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Python</span>
+                            <div class="progress-bar">
+                                <div class="progress w30"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4>Outils</h4>
+                        <div class="skill">
+                            <span>VS Code</span>
+                            <div class="progress-bar">
+                                <div class="progress w70"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Git</span>
+                            <div class="progress-bar">
+                                <div class="progress w60"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section fade-in">
+                    <h3>Projets</h3>
+                    <div class="project">
+                        <h4>Site web personnel</h4>
+                        <p><em>2026</em></p>
+                        <p>Création d'un site vitrine pour présenter mes projets. Utilisation de HTML, CSS et un peu de
+                            JavaScript.</p>
+                    </div>
+                    <div class="project">
+                        <h4>Application en Electronique Numérique et Analogique</h4>
+                        <p><em>2026</em></p>
+                        <p>Développement d'un système de parking via Arduino</p>
+                    </div>
+                </div>
+
+                <div class="section fade-in">
+                    <h3>Centres d'intérêt</h3>
+                    <ul>
+                        <li>Analyse stratégique et esprit d'équipe à travers le gaming compétitif</li>
+                        <li>Veille culturelle et analyse narrative: exploration de divers univers littéraires</li>
+                        <li>Documentation technique et structuration de bases de données narratives </li>
+                    </ul>
+                </div>
+                <a href="/Portfolio/index.html" class="bouton-retour-cv">← Retour à l'accueil</a>
+            
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 - Loïc Autret HOLAZANIRAINY</p>
+        </footer>
+    </div>
+
+    <script>
+        // Bascule mode sombre/clair
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            toggleBtn.textContent = document.body.classList.contains('dark-theme') ? '☀️ Mode clair' : '🌙 Mode sombre';
+        });
+
+        // Animation fade-in au scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        faders.forEach(fader => observer.observe(fader));
+    </script>
+</body>
+
+</html>
